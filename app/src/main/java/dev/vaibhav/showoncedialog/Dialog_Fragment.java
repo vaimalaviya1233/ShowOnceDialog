@@ -9,8 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 public class Dialog_Fragment extends DialogFragment {
-	String title;
-	String body;
+	String title; // title text of dialog
+	String body; // body text of dialog
+
 	public Dialog_Fragment(String title, String body) {
 		this.title = title; // sets title of dialog
 		this.body = body; // sets body of dialog
