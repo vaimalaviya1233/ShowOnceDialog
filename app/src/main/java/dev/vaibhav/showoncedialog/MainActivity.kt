@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 		}
 		getPreferences(MODE_PRIVATE).edit().putBoolean("dialog_accepted", false).apply()
 		if (!getPreferences(MODE_PRIVATE).getBoolean("dialog_accepted", false)) {
-			val dialog: DialogFragment = Dialog_Fragment("Title")
+			val dialog: DialogFragment = Dialog_Fragment("Title", "Body")
 			dialog.isCancelable = false // sets dialog to not be cancellable by user
 			dialog.show(supportFragmentManager, "Dialog_Fragment")
 		}

@@ -10,9 +10,10 @@ import androidx.fragment.app.DialogFragment;
 
 public class Dialog_Fragment extends DialogFragment {
 	String title;
-	public Dialog_Fragment(String title) {
+	String body;
+	public Dialog_Fragment(String title, String body) {
 		this.title = title; // sets title of dialog
-		this.setCancelable(false); // sets dialog to not be cancellable by user
+		this.body = body; // sets body of dialog
 	}
 
 	@NonNull
@@ -21,7 +22,7 @@ public class Dialog_Fragment extends DialogFragment {
 		SharedPreferences.Editor editor = requireActivity().getPreferences(Context.MODE_PRIVATE).edit();
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setTitle(title)
-				.setMessage(R.string.dialog_body) // sets body of dialog
+				.setMessage(body) // sets body of dialog
 				.setPositiveButton(R.string.dialog_positive_button, (dialog, which) -> {
 					editor.putBoolean("dialog_accepted", true); // puts data-value in shared preferences
 					editor.apply();// executes operations to put data in shared preferences
